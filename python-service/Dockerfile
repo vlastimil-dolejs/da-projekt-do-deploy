@@ -1,4 +1,4 @@
-FROM python:3.9.0-alpine3.12
+FROM python:3.6.6-slim
 
 ADD requirements.txt /usr/src/python-service/
 ADD src /usr/src/python-service/src
