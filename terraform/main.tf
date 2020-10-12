@@ -9,7 +9,7 @@ data "digitalocean_ssh_key" "example" {
 resource "digitalocean_vpc" "vpc" {
   name     = "example-project-network"
   region   = var.region
-  ip_range = "10.0.0.0/16"
+  ip_range = "10.1.0.0/16"
 }
 
 resource "digitalocean_droplet" "server" {
@@ -47,7 +47,6 @@ resource "digitalocean_project" "czechitas-do-deployment" {
   name        = "czechitas-do-deployment"
   environment = "Development"
   resources   = [
-    digitalocean_vpc.vpc.urn,
     digitalocean_droplet.server.urn,
     digitalocean_database_cluster.mysql.urn,
   ]
